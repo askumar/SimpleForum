@@ -1,0 +1,143 @@
+body {
+    background-color: #ddd;
+    font-size: 80%;
+}
+
+h1 {
+    font-size: 19pt;
+}
+
+h2 {
+    font-size: 15pt;
+}
+
+div#wrap {
+    width: 80%;
+    background-color: #fff;
+    margin: auto;
+    padding: 1em;
+}
+
+div#header {
+    background-color: #2299ee;
+    color: #fff;
+    margin-bottom: .5em;
+    padding: 1em;
+}
+
+div#nav {
+    background-color: #333;
+    color: #eee;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: .5em;
+}
+
+div#nav ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+div#nav li {
+    display: inline;
+    margin: 0 .5em 0 0;
+    padding: 0;
+}
+
+div#nav li a {
+    text-decoration: none;
+    color: #eee;
+    float: left;
+    width: 5em;
+    border-right: 1px solid #ccc;
+    padding: 5px;
+}
+
+div#nav li a:hover {
+    color: #eee;
+    background-color: #555;
+}
+
+div#content {
+    min-height: 400px;
+    padding: 1em;
+}
+
+div#content h2 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: .5em;
+}
+
+.field_with_errors {
+    background-color: red;
+    display: table;
+    padding: 2px;
+}
+
+#errorExplanation {
+    width: 400px;
+    border: 2px solid #CC0000;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 7px 7px 12px;
+}
+
+#errorExplanation h2 {
+    text-align: left;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #c00;
+    color: #fff;
+    margin: -7px;
+    padding: 5px 5px 5px 15px;
+}
+
+#errorExplanation p {
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px;
+}
+
+#errorExplanation ul li {
+    font-size: 12px;
+    list-style: square;
+    color: red;
+}
+
+div#header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.flash {
+    padding: 5px;
+    width: 300px;
+}
+
+.notice {
+    border: 1px solid green;
+    color: green;
+    background-color: #aaffaa;
+}
+
+.replies-container {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.clear {
+    clear:both;
+    height: 0px;
+}
+
+label {
+    display: block;
+    line-height: 1.5em;
+}
+
+.field, 
+.actions {
+    margin: 1em 0;
+}

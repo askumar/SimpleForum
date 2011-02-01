@@ -1,0 +1,21 @@
+<h1><%= @topic.title %></h1>
+<p>
+<table cellpadding="3">
+  <tr>
+    <td><%= @topic.content %></td>
+    <td><%= link_to 'Edit', edit_topic_path(@topic) %></td>
+    <td><%= link_to 'Back', topics_path %></td>
+  </tr>
+</table>
+</p>
+<hr/>
+<b>Comments:</b><br/>
+<div>
+  <% if @topic.comments.any? %>
+  <%= render @topic.comments %>
+  <% else %>
+  There is no comments.
+  <% end %>
+  <br/>
+  <%= link_to 'Add comment', new_comment_topic_path(@topic) %>
+</div>

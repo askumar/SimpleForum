@@ -1,0 +1,14 @@
+<p>
+<table cellpadding="3">
+  <tr>
+    <td><%= comment.content %></td>
+    <td><%= link_to "Reply", reply_comment_path(comment) %></td>
+    <td><%= link_to "Edit", edit_comment_path(comment) %></td>
+    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+</table>
+
+<div class="replies-container">
+  <%= render comment.replies if comment.replies.present? %>
+</div>
+</p>

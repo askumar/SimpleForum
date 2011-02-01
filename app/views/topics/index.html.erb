@@ -1,0 +1,22 @@
+<h1>List of topics</h1>
+
+<%= link_to "Create a topic", new_topic_path %>
+<br/><br/>
+
+<% @topics.each do |topic| %>
+  <div style="padding-top: 15px;">
+    Created on <%= topic.created_at.to_s(:short) %>
+
+    <div style="width: 200px; float: left; font-size: 14px">
+      <%= link_to topic.title, topic %>
+    </div>
+
+    <%= link_to "Edit", [:edit, topic] %>
+
+    <%= link_to "Delete",  topic, :method => :delete, :confirm => 'Are you sure?', :style=> 'padding-left: 20px' %>
+    <br/>
+
+  </div>
+<%  end %>
+
+
