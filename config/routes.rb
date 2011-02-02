@@ -1,7 +1,7 @@
 SimpleForum::Application.routes.draw do
 
   resources :topics do
-    get 'new_commen(.:format)(/:commentable_type)' => 'comments#new', :as => :new_comment, :on => :member,
+    get 'new_comment(.:format)(/:commentable_type)' => 'comments#new', :as => :new_comment, :on => :member,
       :defaults => { :commentable_type => 'Topic' }
   end
 
@@ -9,6 +9,8 @@ SimpleForum::Application.routes.draw do
     get 'reply(.:format)(/:commentable_type)' => 'comments#new', :as => :reply, :on => :member,
       :defaults => { :commentable_type => 'Comment' }
   end
+
+  get 'change_order/:order' => 'topics#change_order', :as => :change_order
 
 
   # The priority is based upon order of creation:

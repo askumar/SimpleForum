@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110201114117) do
+ActiveRecord::Schema.define(:version => 20110202010622) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110201114117) do
     t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count",   :default => 0
   end
 
   create_table "topics", :force => true do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20110201114117) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", :default => 0
   end
 
 end

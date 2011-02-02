@@ -3,6 +3,18 @@ class TopicsController < ApplicationController
   respond_to :html
   before_filter :find_topic, :except => [ :index, :new, :create ]
 
+  def change_order
+    new_order = params[:order].to_s.gsub('date', 'updated_at').gsub('activity', 'comments_count')
+    if session[:order] =~ /#{new_order} ASC/
+      session[:order].gsub!('ASC', 'DESC')
+    elsif session[:order] =~ /#{new_order} DESC/
+      session[:order].gsub!('DESC', 'ASC')
+    else
+      session[:order] = new_order + ' DESC'
+    end
+    redirect_to topics_path
+  end
+
   def create
     @topic = Topic.new(params[:topic])
     if @topic.save
@@ -21,7 +33,7 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.all
+    @topics = Topic.order(session[:order])
     respond_with @topics
   end
 

@@ -2,10 +2,12 @@
 
 <%= link_to "Create a topic", new_topic_path %>
 <br/><br/>
+Sort topics by <%= link_to 'Date', change_order_path(:date) %> or <%= link_to 'Activity', change_order_path(:activity) %>
 
 <% @topics.each do |topic| %>
   <div style="padding-top: 15px;">
-    Created on <%= topic.created_at.to_s(:short) %>
+    Updated at <%= topic.updated_at.to_s(:short) %>
+    Comments <%= topic.comments_count %>
 
     <div style="width: 200px; float: left; font-size: 14px">
       <%= link_to topic.title, topic %>
